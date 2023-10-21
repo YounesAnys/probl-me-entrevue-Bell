@@ -25,19 +25,27 @@ J'utilise TypeScript pour accomplir cette tâche. Voici comment ça fonctionne :
 Pour utiliser ce programme, suivez ces étapes :
 
 1. Clonez ce référentiel sur votre ordinateur :
+```
 
-'git clone https://github.com/YounesAnys/probleme-entrevue-Bell'
+git clone https://github.com/YounesAnys/probleme-entrevue-Bell'
+```
 
 
 2. Assurez-vous d'avoir TypeScript installés sur votre ordinateur.
 
 3. Installez les dépendances en exécutant la commande suivante :
+```
    
-'npm install'
+npm install
+```
+
 
 5. Compilez le code TypeScript utilisant la commande :
+```
 
-'tsc'
+tsc
+```
+
 
 5. Exécutez le programme
    
