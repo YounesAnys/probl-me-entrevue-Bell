@@ -39,6 +39,8 @@ git clone https://github.com/YounesAnys/probleme-entrevue-Bell
 npm install
 ```
 
+- Faites sure d'avoir le package @types/node installer vu qu'on va utiliser Node.js core module 'fs' (file system) pour interagir avec le fichier txt 
+
 
 4. Compilez le code TypeScript utilisant la commande :
 ```
