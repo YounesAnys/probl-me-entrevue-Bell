@@ -27,7 +27,7 @@ Pour utiliser ce programme, suivez ces étapes :
 1. Clonez ce référentiel sur votre ordinateur :
 ```
 
-git clone https://github.com/YounesAnys/probleme-entrevue-Bell'
+git clone https://github.com/YounesAnys/probleme-entrevue-Bell
 ```
 
 
