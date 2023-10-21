@@ -40,7 +40,7 @@ npm install
 ```
 
 
-5. Compilez le code TypeScript utilisant la commande :
+4. Compilez le code TypeScript utilisant la commande :
 ```
 
 tsc
