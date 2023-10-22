@@ -32,7 +32,7 @@ function printTopCandidates() {
   // Print les 3 premiers candidats
   console.log('Les 3 premiers candidats :');
   for (const candidateId of topCandidates) {
-    console.log(`Candidat ${candidateId} - Votes: ${candidates.get(candidateId)}`);
+    console.log(`Candidat ${candidateId} - Nombre de votes: ${candidates.get(candidateId)}`);
   }
 }
 

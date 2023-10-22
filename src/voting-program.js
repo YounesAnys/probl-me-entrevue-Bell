@@ -10,6 +10,7 @@ var voters = new Set();
 var candidates = new Map();
 var topCandidates = [];
 // Créer un ReadStream pour lire les données à partir du fichier
+// Documentation suivie pour reference : https://stackoverflow.com/questions/33643107/read-and-write-a-text-file-in-typescript
 var readStream = fs.createReadStream(filePath, 'utf-8');
 var rl = readline.createInterface({
     input: process.stdin,
@@ -21,7 +22,7 @@ function printTopCandidates() {
     console.log('Les 3 premiers candidats :');
     for (var _i = 0, topCandidates_1 = topCandidates; _i < topCandidates_1.length; _i++) {
         var candidateId = topCandidates_1[_i];
-        console.log("Candidat ".concat(candidateId, " - Votes: ").concat(candidates.get(candidateId)));
+        console.log("Candidat ".concat(candidateId, " - Nombre de votes: ").concat(candidates.get(candidateId)));
     }
 }
 readStream.on('data', function (data) {
