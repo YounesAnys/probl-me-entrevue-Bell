@@ -16,6 +16,10 @@ const voters: Set<string> = new Set();
 // Map pour suivre le nombre de votes pour chaque candidat
 const candidates: Map<number, number> = new Map();
 
+
+const topCandidates: number[] = [];
+
+
 // Creer un ReadStream pour lire les données à partir du fichier
 // Exemple suivi pour reference : https://stackoverflow.com/questions/33643107/read-and-write-a-text-file-in-typescript
 
@@ -45,13 +49,31 @@ readStream.on('data', (data: string) => {
         } else {
           candidates.set(candidateIdNum, 1);
         }
-      }
-    }
-  });
-});
+
+         // Update du tableau topCandidates avec les 3 premiers candidats avec le plus de votes
+         topCandidates.sort((a, b) => candidates[b] - candidates[a]);
+         if (
+           topCandidates.length < 3 ||
+           candidates[candidateIdNum] >= candidates[topCandidates[2]]
+         ) {
+           topCandidates.push(candidateIdNum);
+           topCandidates.sort((a, b) => candidates[b] - candidates[a]);
+           if (topCandidates.length > 3) {
+             topCandidates.pop();
+           }
+         }
+       }
+     }
+   });
+ });
 
 readStream.on('end', () => {
   // logique pour renvoyer les candidats
+  // Print les 3 premeirs candidats
+  console.log('Les 3 premiers candidats :');
+  for (const candidateId of topCandidates) {
+    console.log(`Candidat ${candidateId} - Votes: ${candidates[candidateId]}`);
+  }
 });
 
 readStream.on('error', (error) => {
