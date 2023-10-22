@@ -18,7 +18,7 @@ J'utilise TypeScript pour accomplir cette tâche. Voici comment ça fonctionne :
 
 3. **Détection de la fraude**: Si un électeur vote plus d'une fois pour différents candidats, le programme détecte cette fraude et signale l'incident.
 
-4. **Affichage des résultats**: À tout moment, le programme renvoie les trois premiers candidats.
+4. **Affichage des résultats**: Lorsque l'utilisateur appuie sur Enter, le programme renvoie les trois premiers candidats avec le plus de votes.
 
 ## Exemple d'execution du program avec un fichier votes.txt qui comprend un jeu de donnees pour des fins de test :
    
