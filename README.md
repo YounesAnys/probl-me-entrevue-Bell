@@ -8,7 +8,7 @@ Bienvenue dans le référentiel GitHub pour la solution au problème de détecti
 
 Le jour des élections, une machine à voter enregistre les données sous la forme `(voter_id, candidate_id)` dans un fichier texte. Le but de ce programme est de lire ce fichier en continu en tant que flux et de renvoyer les trois premiers candidats a un moment donné. De plus, si l'algorithme détecte qu'un électeur a voté plus d'une fois, il doit signaler cette situation comme une fraude.
 
-## Comment ça marche
+## Comment lancer le programme en local
 
 J'utilise TypeScript pour accomplir cette tâche. Voici comment ça fonctionne :
 
