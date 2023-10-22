@@ -38,7 +38,7 @@ git clone https://github.com/YounesAnys/probleme-entrevue-Bell
 - Faites sure d'avoir le package @types/node installer vu qu'on va utiliser Node.js core module 'fs' (file system) pour interagir avec le fichier txt 
 
 
-3. Compilez le code TypeScript utilisant la commande :
+3. Compilez le code TypeScript utilisant la commande, assurez vous d<etre le repo /src :
 
 
 ```tsc voting-program.ts  ```
