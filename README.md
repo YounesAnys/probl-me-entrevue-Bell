@@ -31,7 +31,7 @@ git clone https://github.com/YounesAnys/probleme-entrevue-Bell
 ```
 
 
-2. Assurez-vous d'avoir TypeScript installés sur votre ordinateur.
+2. Assurez-vous d'avoir TypeScript installés sur votre ordinateur. Vous pouvez utiliser la commande dans le terminal :
 
 ```npm install -g typescript```
 
@@ -40,17 +40,14 @@ git clone https://github.com/YounesAnys/probleme-entrevue-Bell
 
 3. Compilez le code TypeScript utilisant la commande :
 
-```
-tsc voting-program.ts
 
-                     ```
+```tsc voting-program.ts  ```
+     
 
+4. Exécutez le programme avec la commande :
+   
 
-5. Exécutez le programme avec la commande :
-   ```
+```node voting-program.ts```
 
-node voting-program.ts
-
-```
-6.Le programme affichera les trois premiers candidats à un moment donné et signalera toute fraude détectée.
+5.Le programme affichera les trois premiers candidats à un moment donné et signalera toute fraude détectée.
 
