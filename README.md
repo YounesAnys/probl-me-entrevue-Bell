@@ -52,7 +52,7 @@ tsc voting-program.ts
    
 
 ```
-node voting-program.ts
+node voting-program.js
 ```
 
 5.Le programme affichera les trois premiers candidats à un moment donné et signalera toute fraude détectée.
