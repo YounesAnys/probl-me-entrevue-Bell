@@ -20,6 +20,13 @@ J'utilise TypeScript pour accomplir cette tâche. Voici comment ça fonctionne :
 
 4. **Affichage des résultats**: À tout moment, le programme renvoie les trois premiers candidats.
 
+## Exemple d'execution du program avec un fichier votes.txt qui comprend un jeu de donnees pour des fins de test :
+   
+![capture1](screenshots/c1.png)
+
+![capture2](screenshots/c2.png)
+
+
 ## Comment lancer le programme en local :
 
 Pour utiliser ce programme, suivez ces étapes :
