@@ -33,23 +33,24 @@ git clone https://github.com/YounesAnys/probleme-entrevue-Bell
 
 2. Assurez-vous d'avoir TypeScript installés sur votre ordinateur.
 
-3. Installez les dépendances en exécutant la commande suivante :
-```
-   
-npm install
-```
+```npm install -g typescript```
 
 - Faites sure d'avoir le package @types/node installer vu qu'on va utiliser Node.js core module 'fs' (file system) pour interagir avec le fichier txt 
 
 
-4. Compilez le code TypeScript utilisant la commande :
+3. Compilez le code TypeScript utilisant la commande :
+
 ```
+tsc voting-program.ts
 
-tsc
+                     ```
+
+
+5. Exécutez le programme avec la commande :
+   ```
+
+node voting-program.ts
+
 ```
-
-
-5. Exécutez le programme
-   
 6.Le programme affichera les trois premiers candidats à un moment donné et signalera toute fraude détectée.
 
