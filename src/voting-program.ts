@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import * as readline from 'readline';
 
 // Définir le chemin du fichier à partir duquel on va lire les données
 const filePath = 'votes.txt';
@@ -18,7 +19,22 @@ const candidates: Map<number, number> = new Map();
 const topCandidates: number[] = [];
 
 // Créer un ReadStream pour lire les données à partir du fichier
+// Documentation suivie pour reference : https://stackoverflow.com/questions/33643107/read-and-write-a-text-file-in-typescript
 const readStream = fs.createReadStream(filePath, 'utf-8');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+function printTopCandidates() {
+  // Logique pour renvoyer les candidats
+  // Print les 3 premiers candidats
+  console.log('Les 3 premiers candidats :');
+  for (const candidateId of topCandidates) {
+    console.log(`Candidat ${candidateId} - Votes: ${candidates.get(candidateId)}`);
+  }
+}
 
 readStream.on('data', (data: string) => {
   // Diviser les données en lignes
@@ -62,12 +78,11 @@ readStream.on('data', (data: string) => {
 });
 
 readStream.on('end', () => {
-  // Logique pour renvoyer les candidats
-  // Print les 3 premiers candidats
-  console.log('Les 3 premiers candidats :');
-  for (const candidateId of topCandidates) {
-    console.log(`Candidat ${candidateId} - Votes: ${candidates.get(candidateId)}`);
-  }
+  // Demander à l'utilisateur quand afficher les candidats
+  rl.question('Appuyez sur Entrée pour afficher les 3 premiers candidats : ', () => {
+    printTopCandidates();
+    rl.close();
+  });
 });
 
 readStream.on('error', (error) => {

@@ -12,3 +12,8 @@
 (H, 2)
 (I, 5)
 (J, 3)
+(K, 3)
+(L, 3)
+(M, 1)
+(N, 3)
+(N, 1) // Cette ligne represente une fraude pck l'électeur N vote a nouveau.

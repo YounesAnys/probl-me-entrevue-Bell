@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
+var readline = require("readline");
 // Définir le chemin du fichier à partir duquel on va lire les données
 var filePath = 'votes.txt';
 // Set pour suivre les électeurs et détecter la fraude
@@ -10,6 +11,19 @@ var candidates = new Map();
 var topCandidates = [];
 // Créer un ReadStream pour lire les données à partir du fichier
 var readStream = fs.createReadStream(filePath, 'utf-8');
+var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+function printTopCandidates() {
+    // Logique pour renvoyer les candidats
+    // Print les 3 premiers candidats
+    console.log('Les 3 premiers candidats :');
+    for (var _i = 0, topCandidates_1 = topCandidates; _i < topCandidates_1.length; _i++) {
+        var candidateId = topCandidates_1[_i];
+        console.log("Candidat ".concat(candidateId, " - Votes: ").concat(candidates.get(candidateId)));
+    }
+}
 readStream.on('data', function (data) {
     // Diviser les données en lignes
     var lines = data.split('\n');
@@ -46,13 +60,11 @@ readStream.on('data', function (data) {
     });
 });
 readStream.on('end', function () {
-    // Logique pour renvoyer les candidats
-    // Print les 3 premiers candidats
-    console.log('Les 3 premiers candidats :');
-    for (var _i = 0, topCandidates_1 = topCandidates; _i < topCandidates_1.length; _i++) {
-        var candidateId = topCandidates_1[_i];
-        console.log("Candidat ".concat(candidateId, " - Votes: ").concat(candidates.get(candidateId)));
-    }
+    // Demander à l'utilisateur quand afficher les candidats
+    rl.question('Appuyez sur Entrée pour afficher les 3 premiers candidats : ', function () {
+        printTopCandidates();
+        rl.close();
+    });
 });
 readStream.on('error', function (error) {
     console.error('Erreur de lecture du fichier txt :', error);
